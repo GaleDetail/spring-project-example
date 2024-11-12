@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter:2.7.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.7'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.7'
+  //View resolver
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.7.7'
+
+    // PostgreSQL driver
+    implementation 'org.postgresql:postgresql:42.5.0'
+
+    // Spring Security
+    implementation 'org.springframework.security:spring-security-core:5.7.7'
+    implementation 'org.springframework.security:spring-security-web:5.7.7'
+    implementation 'org.springframework.security:spring-security-config:5.7.7'
+
+    // JAXB for Java 11 and above
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.3'
+
+    // Testing dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+test {
+    useJUnitPlatform()
+}
