@@ -19,14 +19,19 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @GetMapping("/home")
+    public String home() {
+        return "home";  // Повертає шаблон домашньої сторінки
+    }
+
     @GetMapping("/login")
     public String login() {
-        return "login";
+        return "login";  // Повертає шаблон сторінки логіну
     }
 
     @GetMapping("/register")
     public String register() {
-        return "register";
+        return "register";  // Повертає шаблон сторінки реєстрації
     }
 
     @PostMapping("/register")
@@ -44,6 +49,6 @@ public class AuthController {
         user.setRole("ROLE_USER");
         userRepository.save(user);
 
-        return "redirect:/login";
+        return "redirect:/login";  // Переходить на сторінку логіну після реєстрації
     }
 }
